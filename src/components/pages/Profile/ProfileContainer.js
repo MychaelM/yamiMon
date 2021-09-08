@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 
-import RenderHomePage from './RenderHomePage';
+import RenderProfilePage from './RenderProfilePage';
 
-function HomeContainer({ LoadingComponent }) {
+function ProfileContainer({ LoadingComponent }) {
   const { authState, authService } = useOktaAuth();
   const [userInfo, setUserInfo] = useState(null);
   // eslint-disable-next-line
@@ -34,9 +34,9 @@ function HomeContainer({ LoadingComponent }) {
         <LoadingComponent message="Fetching user profile..." />
       )} */}
 
-      <RenderHomePage userInfo={userInfo} authService={authService} />
+      <RenderProfilePage userInfo={userInfo} authService={authService} />
     </>
   );
 }
 
-export default HomeContainer;
+export default ProfileContainer;

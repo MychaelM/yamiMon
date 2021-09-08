@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../common';
 
-function RenderHomePage(props) {
+function RenderProfilePage(props) {
   const { userInfo, authService } = props;
   return (
     <div>
@@ -31,4 +31,4 @@ function RenderHomePage(props) {
     </div>
   );
 }
-export default RenderHomePage;
+export default RenderProfilePage;
