@@ -1,26 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../common';
 
 function RenderProfilePage(props) {
   const { userInfo, authService } = props;
+  const [data, setData] = useState(null);
   return (
     <div>
       <h1>Hi Placeholder Welcome to Yami Collections Profile Page</h1>
       <div>
-        <p>
-          This is an example of a common example of how we'd like for you to
-          approach components.
-        </p>
-        <p>
-          <Link to="/profile-list">Profiles Example</Link>
-        </p>
-        <p>
-          <Link to="/example-list">Example List of Items</Link>
-        </p>
-        <p>
-          <Link to="/datavis">Data Visualizations Example</Link>
-        </p>
+        {data ? null : <p>No Collections yet. Why not start a new one?</p>}
         <p>
           <Button
             handleClick={() => authService.logout()}
