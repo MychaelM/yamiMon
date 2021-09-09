@@ -9,11 +9,11 @@ import {
 // eslint-disable-next-line
 import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 
-
 import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { LoginPage } from './components/pages/Login';
 import { LandingPage } from './components/pages/Landing';
+import { ProfilePage } from './components/pages/Profile';
 import { config } from './utils/oktaConfig';
 
 ReactDOM.render(
@@ -43,11 +43,8 @@ function App() {
         <Route path="/implicit/callback" component={LoginCallback} />
         <Route path="/landing" component={LandingPage} />
         {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <Route
-          path="/"
-          exact
-          component={() => <LandingPage />}
-        />
+        <Route path="/profile" component={ProfilePage} />
+        <Route path="/" exact component={() => <LandingPage />} />
         <Route path="/example-list" component={ExampleListPage} />
         <Route component={NotFoundPage} />
       </Switch>
